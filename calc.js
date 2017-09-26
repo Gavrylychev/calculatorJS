@@ -5,6 +5,7 @@ window.onload = function() {
       limit,
       zero,
       period,
+      isNewOperation = true,
       operator;
 
   screen = document.getElementById("result");
@@ -12,6 +13,10 @@ window.onload = function() {
   var len = elem.length;
     for(var i = 0; i < len; i++ ) {
       elem[i].addEventListener("click",function() {
+        if (isNewOperation) {
+          isNewOperation = false;
+          screen.innerHTML = output = '';
+        }
         num = this.value;
         output = screen.innerHTML += num;
         limit = output.length;
@@ -19,29 +24,30 @@ window.onload = function() {
          alert("Sorry no more input is allowed");
        }
      },false);
-    }
+  }
 
-  document.querySelector(".zero").addEventListener("click",function() {
-    zero = this.value;
-    if(screen.innerHTML === "") {
-      output = screen.innerHTML = zero;
-    }else if(screen.innerHTML === output) {
-      output = screen.innerHTML +=zero;
-    }
-  },false);
+  // document.querySelector(".zero").addEventListener("click",function() {
+  //   zero = this.value;
+  //   if(screen.innerHTML === "") {
+  //     output = screen.innerHTML = zero;
+  //   }else if(screen.innerHTML === output) {
+  //     output = screen.innerHTML +=zero;
+  //   }
+  // },false);
 
-  document.querySelector(".period").addEventListener("click",function() {
-    period = this.value;
-    if(screen.innerHTML === "") {
-      output = screen.innerHTML = screen.innerHTML.concat("0.");
-    }else if(screen.innerHTML === output) {
-      screen.innerHTML = screen.innerHTML.concat(".");
-    }
-  },false);
+  // document.querySelector(".period").addEventListener("click",function() {
+  //   period = this.value;
+  //   if(screen.innerHTML === "") {
+  //     output = screen.innerHTML = screen.innerHTML.concat("0.");
+  //   }else if(screen.innerHTML === output) {
+  //     screen.innerHTML = screen.innerHTML.concat(".");
+  //   }
+  // },false);
 
   document.querySelector("#eqn-bg").addEventListener("click",function() {
+    isNewOperation = true;
     if(screen.innerHTML === output) {
-      screen.innerHTML = solveStr();
+      solveStr(screen.innerHTML);
     }else {
       screen.innerHTML = "";
     }
@@ -51,18 +57,19 @@ window.onload = function() {
    screen.innerHTML = "";
   },false);
 
-  var elem1 = document.querySelectorAll(".operator");
-  var len1 = elem1.length;
-  for(var i = 0; i < len1; i++ ) {
-    elem1[i].addEventListener("click",function() {
-      operator = this.value;
-      if(screen.innerHTML === "") {
-        screen.innerHTML = screen.innerHTML.concat("");
-      }else if(output) {
-        screen.innerHTML = output.concat(operator);
-      }
-    },false);
-  }
+  // var elem1 = document.querySelectorAll(".operator");
+  //
+  // var len1 = elem1.length;
+  // for(var i = 0; i < len1; i++ ) {
+  //   elem1[i].addEventListener("click",function() {
+  //     operator = this.value;
+  //     if(screen.innerHTML === "") {
+  //       screen.innerHTML = screen.innerHTML.concat("");
+  //     }else if(output) {
+  //       screen.innerHTML = output.concat(operator);
+  //     }
+  //   },false);
+  // }
 
   function replaceAll(haystack, needle, replace) {
     return haystack.split(needle).join(replace);
@@ -159,6 +166,7 @@ function solveStr(eq) {
         eq = (multiply) ? allocFx(eq, "*", function(l, r) { return parseFloat(l)*parseFloat(r); }) : allocFx(eq, "/", function(l, r) { return parseFloat(l)/parseFloat(r); });
     }
     while (strContain(eq, "+")) eq = allocFx(eq, "+", function(l, r) { return parseFloat(l)+parseFloat(r); });
+    screen.innerHTML = eq;
     return eq;
 }
 }
