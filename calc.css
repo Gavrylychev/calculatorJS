@@ -1,0 +1,125 @@
+#background {
+    width: 300px;
+    height: 400px;
+    background: rgb(0,191,255);
+    margin: 50px auto;
+    border-radius: 3%;
+}
+
+button {
+    border: 0;
+}
+
+#result {
+    display: block;
+    font-family: sans-serif;
+    width: 227px;
+    height: 45px;
+    margin: 10px auto;
+    text-align: right;
+    border: 0;
+    background: #3b3535;
+    color: #fff;
+    padding-top: 10px;
+    font-size: 20px;
+    margin-left: 25px;
+    outline: none;
+    overflow: hidden;
+    letter-spacing: 4px;
+    position: relative;
+    top: 10px;
+    border-bottom: 3px solid black;
+    border-radius: 3%;
+    : 5px;
+}
+
+#result:hover {
+    cursor: text;
+}
+
+#first-rows {
+    margin-bottom: 20px;
+    position: relative;
+    top: 10px;
+}
+
+.rows {
+    width: 300px;
+    margin-top: 10px;
+}
+
+#delete {
+    width: 110px;
+    height: 50px;
+    margin-left: 25px;
+    border-radius: 10%;
+}
+
+.fall-back {
+    margin-left: 3px !important;
+}
+
+.btn-style {
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    border-radius: 15%;
+}
+
+.first-child {
+ margin-left: 25px;
+}
+
+ .num-bg {
+    background: #000;
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+    outline: none;
+    border-bottom: 3px solid #333;
+}
+
+ .num-bg:active {
+    background: rgb(105,105,105);
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: inset 5px 5px 5px rgb(169,169,169);
+}
+
+.opera-bg {
+    background: rgb(255,165,0);
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+    outline: none;
+    border-bottom: 3px solid #555;
+}
+
+.opera-bg:active {
+    background: rgb(255,205,45);
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: inset 4px 4px 4px #555;
+}
+
+.upper-bg {
+    background: gray;
+    color: #fff;
+    font-size:26px;
+    cursor: pointer;
+    outline: none;
+    border-bottom: 3px solid black;
+}
+
+.upper-bg:active {
+    background: lightgray;
+    color: #fff;
+    font-size:26px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: inset 4px 4px 4px darkgray;
+}

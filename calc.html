@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./calc.css">
+  <title>Calculator</title>
+</head>
+<body>
+  <div id="background">
+    <div id="result"></div>
+    <div id="main">
+      <div id="first-rows">
+        <button class="upper-bg" id="delete">Del</button>
+        <button value="(" class="operator btn-style upper-bg fall-back">(</button>
+        <button value=")" class="operator btn-style upper-bg">)</button>
+      </div>
+
+      <div class="rows">
+        <button value="7" class="btn-style num-bg num first-child">7</button>
+        <button value="8" class="btn-style num-bg num">8</button>
+        <button value="9" class="btn-style num-bg num">9</button>
+        <button value="/" class="operator btn-style opera-bg">/</button>
+      </div>
+
+      <div class="rows">
+        <button value="4" class="btn-style num-bg num first-child">4</button>
+        <button value="5" class="btn-style num-bg num">5</button>
+        <button value="6" class="btn-style num-bg num">6</button>
+        <button value="*" class="operator btn-style opera-bg">*</button>
+      </div>
+
+      <div class="rows">
+        <button value="1" class="btn-style num-bg num first-child">1</button>
+        <button value="2" class="btn-style num-bg num">2</button>
+        <button value="3" class="btn-style num-bg num">3</button>
+        <button value="-" class="operator btn-style opera-bg">-</button>
+      </div>
+
+      <div class="rows">
+        <button value="0" class="zero num-bg btn-style first-child">0</button>
+        <button value="." class="btn-style num-bg period">.</button>
+        <button value="=" id="eqn-bg" class="btn-style num-bg">=</button>
+        <button value="+" class="operator btn-style opera-bg">+</button>
+      </div>
+    </div>
+  </div>
+  <script src="calc.js"></script>
+</body>
+</html>
