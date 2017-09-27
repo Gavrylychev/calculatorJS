@@ -25,7 +25,7 @@ window.onload = function() {
   document.querySelector("#eqn-bg").addEventListener("click",function() {
     isNewOperation = true;
     if(screen.innerHTML === output) {
-      solveStr(screen.innerHTML);
+      solveStr(reformat(screen.innerHTML));
     }else {
       screen.innerHTML = "";
     }
@@ -117,8 +117,7 @@ function solveStr(eq) {
         var preStr = "(" + nested + ")";
         eq = eq.replace(preStr, solvedStr);
     }
-    // while (strContain(eq, "^")) eq = allocFx(eq, "^", function(l, r) { return Math.pow(parseFloat(l),parseFloat(r)); }, false);
-    // while (strContain(eq, "&")) eq = allocFx(eq, "&", function(l, r) { return Math.pow(parseFloat(l),parseFloat(r)); });
+
     while (strContain(eq, "*") || strContain(eq, "/")) {
         var multiply = true;
         if (eq.indexOf("*") < eq.indexOf("/")) {
